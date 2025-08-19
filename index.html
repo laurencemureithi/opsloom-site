@@ -45,17 +45,21 @@
 <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-black/40 border-b border-black/10 dark:border-white/10">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 <a href="./index.html" class="flex items-center gap-3">
-  <!-- Light theme logo -->
-  <img src="./assets/logoh.png" 
-       alt="Opsloom logo light" 
-       class="block dark:hidden object-contain"
-       style="height: 56px; width: auto; margin-left: -4px;" />
+  <!-- Light theme logo with translucent background -->
+  <div class="rounded-xl bg-white/70 backdrop-blur-sm p-1 block dark:hidden">
+    <img src="./assets/logoh.png" 
+         alt="Opsloom logo light" 
+         class="object-contain"
+         style="height: 56px; width: auto; margin-left: -4px;" />
+  </div>
 
-  <!-- Dark theme logo -->
-  <img src="./assets/logoh-dark.png" 
-       alt="Opsloom logo dark" 
-       class="hidden dark:block object-contain"
-       style="height: 56px; width: auto; margin-left: -4px;" />
+  <!-- Dark theme logo with translucent background -->
+  <div class="rounded-xl bg-gray-900/70 backdrop-blur-sm p-1 hidden dark:block">
+    <img src="./assets/logoh-dark.png" 
+         alt="Opsloom logo dark" 
+         class="object-contain"
+         style="height: 56px; width: auto; margin-left: -4px;" />
+  </div>
 </a>
     <nav class="hidden md:flex items-center gap-6 text-gray-700 dark:text-gray-200">
       <a href="./services.html" class="hover:text-brand-blue">Services</a>
