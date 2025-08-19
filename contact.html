@@ -45,10 +45,17 @@
 
 <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-black/40 border-b border-black/10 dark:border-white/10">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="./index.html" class="flex items-center gap-3">
-      <img src="./assets/logo.png" alt="Opsloom logo" class="h-10 w-10 rounded-xl"/>
-      <span class="font-semibold text-lg tracking-wide text-gray-900 dark:text-gray-100">Opsloom</span>
-    </a>
+<a href="./index.html" class="flex items-center gap-3">
+  <!-- Light theme logo -->
+  <img src="./assets/logoo-removebg-preview.png" 
+       alt="Opsloom logo light" 
+       class="h-10 w-auto rounded-xl block dark:hidden"/>
+
+  <!-- Dark theme logo -->
+  <img src="./assets/logoo-dark-removebg-preview.png" 
+       alt="Opsloom logo dark" 
+       class="h-10 w-auto rounded-xl hidden dark:block"/>
+</a>
     <nav class="hidden md:flex items-center gap-6 text-gray-700 dark:text-gray-200">
       <a href="./services.html" class="hover:text-brand-blue">Services</a>
       <a href="./projects.html" class="hover:text-brand-blue">Projects</a>
