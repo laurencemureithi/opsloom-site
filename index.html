@@ -108,11 +108,19 @@
           <div><div class="text-3xl font-bold">PWA</div><div class="text-gray-600 dark:text-gray-400">Installable & offline</div></div>
         </div>
       </div>
-      <div class="relative">
-        <div class="aspect-[16/10] rounded-2xl border border-black/10 dark:border-white/10 shadow-xl overflow-hidden">
-          <img src="./assets/logoh.png" alt="Opsloom preview" class="w-full h-full object-cover" />
-        </div>
-      </div>
+<div class="relative">
+  <div class="aspect-[16/10] rounded-2xl border border-black/10 dark:border-white/10 shadow-xl overflow-hidden">
+    <!-- Light theme image -->
+    <img src="./assets/logoh.png" 
+         alt="Opsloom preview light" 
+         class="w-full h-full object-cover block dark:hidden" />
+
+    <!-- Dark theme image -->
+    <img src="./assets/logoh-dark.png" 
+         alt="Opsloom preview dark" 
+         class="w-full h-full object-cover hidden dark:block" />
+  </div>
+</div>
     </div>
   </section>
 
