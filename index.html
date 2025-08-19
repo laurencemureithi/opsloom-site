@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opsloom — Design, Automate, Scale</title>
+  <meta name="description" content="Opsloom helps SMEs design modern websites, automate workflows, and scale with analytics and AI." />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta property="og:title" content="Opsloom — Design, Automate, Scale" />
+  <meta property="og:description" content="Smart digital services powered by human–AI collaboration." />
+  <meta property="og:image" content="/assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <script>
+    // Dark mode toggle persistence
+    (function() {
+      const preferDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (preferDark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#111827',
+              slate: '#334155',
+              light: '#F8FAFC',
+              blue: '#2563EB',
+              lime: '#84CC16',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+<body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
+
+<header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-black/40 border-b border-black/10 dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3">
+      <img src="/assets/logo.svg" alt="Opsloom logo" class="h-10 w-10 rounded-xl"/>
+      <span class="font-semibold text-lg tracking-wide text-gray-900 dark:text-gray-100">Opsloom</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 dark:text-gray-200">
+      <a href="/services.html" class="hover:text-brand-blue">Services</a>
+      <a href="/projects.html" class="hover:text-brand-blue">Projects</a>
+      <a href="/contact.html" class="hover:text-brand-blue">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button id="themeToggle" class="px-3 py-1.5 rounded-xl border border-black/10 dark:border-white/10 text-sm text-gray-800 dark:text-gray-200">Theme</button>
+      <a href="/contact.html" class="hidden md:inline-block px-4 py-2 rounded-xl bg-brand-blue text-white font-medium shadow">Get Started</a>
+      <button class="md:hidden" id="mobileMenuBtn" aria-label="Open menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-gray-800 dark:text-gray-200"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 dark:border-white/10 bg-white/90 dark:bg-black/70">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3">
+      <a href="/services.html" class="py-2">Services</a>
+      <a href="/projects.html" class="py-2">Projects</a>
+      <a href="/contact.html" class="py-2">Contact</a>
+    </div>
+  </div>
+</header>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('themeToggle');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+
+<main>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-blue/10 to-transparent dark:from-brand-blue/20"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Design. Automate. <span class="text-brand-blue">Scale.</span></h1>
+        <p class="mt-5 text-lg text-gray-700 dark:text-gray-300 max-w-xl">We build modern websites, streamline operations with automation, and turn your data into decisions. Fast, reliable, and built for growth.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="/contact.html" class="px-5 py-3 rounded-xl bg-brand-blue text-white font-semibold shadow">Start a Project</a>
+          <a href="/services.html" class="px-5 py-3 rounded-xl border border-black/10 dark:border-white/10">Explore Services</a>
+        </div>
+        <div class="mt-8 grid grid-cols-3 gap-6 text-sm">
+          <div><div class="text-3xl font-bold">95+</div><div class="text-gray-600 dark:text-gray-400">Lighthouse score target</div></div>
+          <div><div class="text-3xl font-bold">WCAG</div><div class="text-gray-600 dark:text-gray-400">Accessible by design</div></div>
+          <div><div class="text-3xl font-bold">PWA</div><div class="text-gray-600 dark:text-gray-400">Installable & offline</div></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[16/10] rounded-2xl border border-black/10 dark:border-white/10 shadow-xl overflow-hidden">
+          <img src="/assets/logo.svg" alt="Opsloom preview" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8">Core Services</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">Excel & VBA Automation</div>
+        <p class="text-gray-600 dark:text-gray-300">Slash repetitive work, eliminate errors, and trigger smart alerts.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">Website Design & Deployment</div>
+        <p class="text-gray-600 dark:text-gray-300">Lightning-fast, mobile-first sites that convert visitors into leads.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">Data Dashboards & Analytics</div>
+        <p class="text-gray-600 dark:text-gray-300">Visualize KPIs and make confident decisions in real time.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">AI Tools & Content</div>
+        <p class="text-gray-600 dark:text-gray-300">Deploy chatbots, content pipelines, and AI-powered workflows.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">Business Systems & Templates</div>
+        <p class="text-gray-600 dark:text-gray-300">SOPs, HR & maintenance trackers, and operations frameworks.</p>
+      </div>
+      <div class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
+        <div class="text-lg font-semibold mb-2">Performance & Quality Audits</div>
+        <p class="text-gray-600 dark:text-gray-300">ISO/QMS-informed process reviews with actionable outcomes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-8 md:p-12 bg-gradient-to-br from-brand-blue/10 to-transparent dark:from-brand-blue/20">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">How We Work</h3>
+          <ol class="space-y-2 text-gray-700 dark:text-gray-300 list-decimal list-inside">
+            <li>Discovery call & scope alignment</li>
+            <li>Rapid prototype (3–7 days)</li>
+            <li>Iterate with your feedback</li>
+            <li>Launch + training + support</li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">What You Get</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
+            <li>Modern UI with dark/light mode</li>
+            <li>Optimized performance (Lighthouse ≥95)</li>
+            <li>WCAG 2.2 AA accessibility</li>
+            <li>PWA (installable & offline-ready)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8">
+        <a href="/projects.html" class="px-5 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black">View Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8">Testimonials</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <blockquote class="p-6 rounded-2xl border border-black/10 dark:border-white/10 text-sm">
+        “Reduced our reporting time by 80% and gave us dashboards that finally make sense.”
+        <div class="mt-3 text-gray-500">— Happy Client, Nairobi</div>
+      </blockquote>
+      <blockquote class="p-6 rounded-2xl border border-black/10 dark:border-white/10 text-sm">
+        “Clean, fast website and a smooth process from start to finish.”
+        <div class="mt-3 text-gray-500">— SME Owner</div>
+      </blockquote>
+      <blockquote class="p-6 rounded-2xl border border-black/10 dark:border-white/10 text-sm">
+        “Smart use of AI saved our team hours every week.”
+        <div class="mt-3 text-gray-5 00">— Ops Lead</div>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-8 md:p-12 text-center">
+      <h3 class="text-2xl font-bold">Ready to modernize your operations?</h3>
+      <p class="mt-2 text-gray-700 dark:text-gray-300">Tell us your goal, and we’ll propose a focused solution in 48 hours.</p>
+      <a href="/contact.html" class="inline-block mt-6 px-6 py-3 rounded-xl bg-brand-blue text-white font-semibold shadow">Request Proposal</a>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-24 border-t border-black/10 dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm text-gray-600 dark:text-gray-300">
+    <div>
+      <div class="flex items-center gap-3 mb-3">
+        <img src="/assets/logo.svg" alt="Opsloom logo" class="h-8 w-8 rounded-lg"/>
+        <span class="font-semibold">Opsloom</span>
+      </div>
+      <p>Smart digital services powered by human–AI collaboration.</p>
+    </div>
+    <div>
+      <div class="font-semibold mb-2">Explore</div>
+      <ul class="space-y-1">
+        <li><a href="/services.html" class="hover:text-brand-blue">Services</a></li>
+        <li><a href="/projects.html" class="hover:text-brand-blue">Projects</a></li>
+        <li><a href="/contact.html" class="hover:text-brand-blue">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold mb-2">Legal</div>
+      <ul class="space-y-1">
+        <li><a href="/privacy.html" class="hover:text-brand-blue">Privacy</a></li>
+        <li><a href="/terms.html" class="hover:text-brand-blue">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center text-xs text-gray-500 dark:text-gray-400 pb-8">© 2025 Opsloom. Built by Laurence Mureithi & ChatGPT.</div>
+</footer>
+
+<script>
+// Basic intersection observer for subtle fade-in
+const els = document.querySelectorAll('section, .p-6, .rounded-2xl');
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('opacity-100','translate-y-0') });
+}, {threshold: 0.1});
+els.forEach(el=>{ el.classList.add('opacity-0','translate-y-2','transition','duration-700'); obs.observe(el); });
+</script>
+<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
+</body>
+</html>
