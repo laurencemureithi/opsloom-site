@@ -107,6 +107,17 @@
         <li>80% less manual entry</li>
         <li>Zero duplicate SKUs</li>
       </ul>
+    <div 
+  class="mt-4 cursor-pointer group"
+  onclick="openVideo('https://www.youtube.com/embed/8gC0yFUXqdo')"
+>
+  <img 
+    src="https://img.youtube.com/vi/8gC0yFUXqdo/hqdefault.jpg"
+    class="rounded-xl border border-white/10 group-hover:opacity-90 transition"
+  />
+  <div class="text-brand-blue mt-2 font-semibold group-hover:underline">Watch Case Study</div>
+</div>
+
     </article>
     <article class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
       <div class="text-sm text-gray-500">Web</div>
@@ -116,6 +127,18 @@
         <li>Lighthouse 98/100</li>
         <li>Time-to-Interactive &lt; 1.5s</li>
       </ul>
+
+      <div 
+  class="mt-4 cursor-pointer group"
+  onclick="openVideo('https://www.youtube.com/embed/YOUR_VIDEO_ID')"
+>
+  <img 
+    src="https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg"
+    class="rounded-xl border border-white/10 group-hover:opacity-90 transition"
+  />
+  <div class="text-brand-blue mt-2 font-semibold group-hover:underline">Watch Case Study</div>
+</div>
+
     </article>
     <article class="p-6 rounded-2xl border border-black/10 dark:border-white/10">
       <div class="text-sm text-gray-500">Analytics</div>
@@ -125,6 +148,18 @@
         <li>Weekly reporting time cut by 70%</li>
         <li>Actionable KPI focus</li>
       </ul>
+
+      <div 
+  class="mt-4 cursor-pointer group"
+  onclick="openVideo('https://www.youtube.com/embed/YOUR_VIDEO_ID')"
+>
+  <img 
+    src="https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg"
+    class="rounded-xl border border-white/10 group-hover:opacity-90 transition"
+  />
+  <div class="text-brand-blue mt-2 font-semibold group-hover:underline">Watch Case Study</div>
+</div>
+
     </article>
   </div>
 
@@ -170,5 +205,47 @@
   <div class="text-center text-xs text-gray-500 dark:text-gray-400 pb-8">© 2025 Opsloom. Built by Laurence Magondu.</div>
 </footer>
 
+<!-- Video Modal -->
+<div id="videoModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+  <div class="bg-black rounded-2xl overflow-hidden shadow-2xl max-w-3xl w-full relative animate-scaleIn">
+    <button id="closeVideoModal" class="absolute top-3 right-3 text-white text-2xl">&times;</button>
+    <iframe id="videoFrame" class="w-full aspect-video" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<style>
+  @keyframes scaleIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .animate-scaleIn {
+    animation: scaleIn 0.25s ease-out;
+  }
+</style>
+
+<script>
+  function openVideo(url) {
+    const modal = document.getElementById("videoModal");
+    const frame = document.getElementById("videoFrame");
+    modal.classList.remove("hidden");
+    frame.src = url + "?autoplay=1";
+  }
+
+  document.getElementById("closeVideoModal").addEventListener("click", () => {
+    const modal = document.getElementById("videoModal");
+    const frame = document.getElementById("videoFrame");
+    frame.src = "";
+    modal.classList.add("hidden");
+  });
+
+  // Close when clicking outside
+  document.getElementById("videoModal").addEventListener("click", (e) => {
+    if (e.target.id === "videoModal") {
+      document.getElementById("closeVideoModal").click();
+    }
+  });
+</script>
+
+  
 </body>
 </html>
